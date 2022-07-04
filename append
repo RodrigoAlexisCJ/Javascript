@@ -108,7 +108,7 @@ var a = document.getElementById("apel").value;
 var y = document.getElementById("mat").value;
 var z = document.getElementById("dir").value;
 var t = document.getElementById("tel").value;
-if (x == "" || isNaN(x)==false || isNaN(a)==false ||z =="" || a == "" || t == "" || isNaN(t)) {
+if (x == "" || isNaN(x)==false || isNaN(a)==false ||z =="" || a == "" || t == "" || isNaN(t) || t.length < 8) {
     alert("All the boxes must be filled out correctly"); 
   }
   else{
