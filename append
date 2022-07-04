@@ -51,6 +51,7 @@ table {
 <tr>
 <th>Matricula</th>
 <th>Nombre</th>
+<th>Apellidos</th>
 <th>Materia</th>
 <th>Edad</th>
 <th>Direccion</th>
@@ -71,6 +72,9 @@ table {
 <!--<form>-->
 <label for="nombre">Nombre</label>
 <input type="text" id="nombre">
+<br><br>
+<label for="apellido">Apellidos</label>
+<input type="text" id="apellido">
 <br><br>
 <label for="mat">Materia</label>
 <select name="mat" id="mat">
@@ -96,9 +100,10 @@ table {
 var idno = 1;
 function hola () {
 var x = document.getElementById("nombre").value;
+var a = document.getElementById("apellido").value;
 var y = document.getElementById("mat").value;
 var z = document.getElementById("dir").value;
-if (x == "" || z=="") {
+if (x == "" || z=="" || a=="") {
     alert("All the boxes must be filled out");
     
   }
@@ -109,13 +114,14 @@ if (x == "" || z=="") {
   var pro= Math.floor(Math.random()*100);
    alert("The database has been Updated");
    markup = "<tr><td>"+idno+"</td><td>"
-          + x + "</td><td>"+y+"</td><td>"+ran+
+          + x + "</td><td>"+a+"</td><td>"+y+"</td><td>"+ran+
           "</td><td>"+z+"</td><td>"+pro+"</td></tr>";
         tableBody = $("table tbody");
         tableBody.append(markup);
         idno++;
    }
    document.getElementById("nombre").value="";
+   document.getElementById("apellido").value="";
    document.getElementById("dir").value="";
 }
 </script>
