@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML</title>
+<meta charset="UTF-8">
+<meta name="keywords" content="JS,CSS,HTML">
+<meta name="Author" content="Rodrigo">
+
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+
+</head>
+<body>
+
+<h1>Hands ON</h1>
+<section>
+<h2>Consulta</h2>
+
+<b>Tabla</b>
+
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Materia</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</section>
+
+<section>
+<hr>
+<h2>Insertar</h2>
+<!--<form action="/action_page.php"
+      method="get">-->
+<!--<form>-->
+<label for="nombre">Nombre</label>
+<input type="text" id="nombre">
+<br><br>
+<label for="mat">Materia</label>
+<select name="mat" id="mat">
+<option value="matematicas">Matematicas</option>
+<option value="Español">Español</option>
+<option value="Civica">Civica</option>
+</select>
+<br>
+<br>
+<button id="sal" onclick="hola();">Actualizar</button>
+<!--</form>-->
+<!--<input id="sal" type="submit" value="Actualizar" onclick="hola();">-->
+<!--<button id="sal">oprimir</button>-->
+<br>
+</section>
+
+<br>
+
+<script>
+function hola () {
+var x = document.getElementById("nombre").value;
+var y = document.getElementById("mat").value;
+if (x == "") {
+    alert("Name must be filled out");
+    
+  }
+  else{
+   alert("The database has been Updated");
+   markup = "<tr><td>"
+          + x + "</td><td>"+y+"</td></tr>";
+        tableBody = $("table tbody");
+        tableBody.append(markup);
+   }
+}
+</script>
+
+
+</body>
+</html>
