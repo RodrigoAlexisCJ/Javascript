@@ -112,10 +112,11 @@ if (x == "" || z=="" || a=="") {
   var ra= Math.floor(Math.random()*res);
   var ran=ra+18;
   var pro= Math.floor(Math.random()*100);
+  var json={"name":x,"lname":a, "mat":y, "dir":z};
    alert("The database has been Updated");
    markup = "<tr><td>"+idno+"</td><td>"
-          + x + "</td><td>"+a+"</td><td>"+y+"</td><td>"+ran+
-          "</td><td>"+z+"</td><td>"+pro+"</td></tr>";
+          + json.name + "</td><td>"+json.lname+"</td><td>"+json.mat+"</td><td>"+ran+
+          "</td><td>"+json.dir+"</td><td>"+pro+"</td></tr>";
         tableBody = $("table tbody");
         tableBody.append(markup);
         idno++;
