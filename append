@@ -79,7 +79,7 @@ table {
 <br><br>
 <label for="mat">Materia</label>
 <select name="mat" id="mat">
-<option value="matematicas">Matematicas</option>
+<option value="Matematicas">Matematicas</option>
 <option value="Español">Español</option>
 <option value="Civica">Civica</option>
 </select>
@@ -89,7 +89,7 @@ table {
 <input type="text" id="dir">
 <br><br>
 <label for="tel">Telefono</label>
-<input type="text" id="tel">
+<input type="text" id="tel" value="55">
 <br><br>
 <button id="sal" onclick="hola();">Actualizar</button>
 <!--</form>-->
@@ -108,8 +108,8 @@ var a = document.getElementById("apel").value;
 var y = document.getElementById("mat").value;
 var z = document.getElementById("dir").value;
 var t = document.getElementById("tel").value;
-if (x == "" || z =="" || a == "" || t == "" || isNaN(t)) {
-    alert("All the boxes must be filled out"); 
+if (x == "" || isNaN(x)==false || isNaN(a)==false ||z =="" || a == "" || t == "" || isNaN(t)) {
+    alert("All the boxes must be filled out correctly"); 
   }
   else{
   var res=29-18;
@@ -127,7 +127,8 @@ if (x == "" || z =="" || a == "" || t == "" || isNaN(t)) {
    document.getElementById("nombre").value="";
    document.getElementById("dir").value="";
    document.getElementById("apel").value="";
-   document.getElementById("tel").value="";
+   $("#mat").val("Matematicas");
+   document.getElementById("tel").value="55";
 }
 </script>
 
