@@ -10,6 +10,33 @@
 "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
   </script>
 
+<style>
+#sal:active
+{ 
+color: blue; 
+background-color: red; 
+}
+#sal:hover{ 
+    color: blue; 
+    background-color: red;
+}
+h1{ color: red; }
+
+table {
+      margin: 25px 0;
+      width: 200px;
+    }
+
+    table th, table td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    table, th, td {
+      border: 1px solid;
+    }
+</style>
+
 </head>
 <body>
 
@@ -22,8 +49,12 @@
 <table>
 <thead>
 <tr>
+<th>Matricula</th>
 <th>Nombre</th>
 <th>Materia</th>
+<th>Edad</th>
+<th>Direccion</th>
+<th>Promedio</th>
 </tr>
 </thead>
 <tbody>
@@ -49,6 +80,9 @@
 </select>
 <br>
 <br>
+<label for="dir">Direccion</label>
+<input type="text" id="dir">
+<br><br>
 <button id="sal" onclick="hola();">Actualizar</button>
 <!--</form>-->
 <!--<input id="sal" type="submit" value="Actualizar" onclick="hola();">-->
@@ -59,20 +93,30 @@
 <br>
 
 <script>
+var idno = 1;
 function hola () {
 var x = document.getElementById("nombre").value;
 var y = document.getElementById("mat").value;
-if (x == "") {
-    alert("Name must be filled out");
+var z = document.getElementById("dir").value;
+if (x == "" || z=="") {
+    alert("All the boxes must be filled out");
     
   }
   else{
+  var res=29-18;
+  var ra= Math.floor(Math.random()*res);
+  var ran=ra+18;
+  var pro= Math.floor(Math.random()*100);
    alert("The database has been Updated");
-   markup = "<tr><td>"
-          + x + "</td><td>"+y+"</td></tr>";
+   markup = "<tr><td>"+idno+"</td><td>"
+          + x + "</td><td>"+y+"</td><td>"+ran+
+          "</td><td>"+z+"</td><td>"+pro+"</td></tr>";
         tableBody = $("table tbody");
         tableBody.append(markup);
+        idno++;
    }
+   document.getElementById("nombre").value="";
+   document.getElementById("dir").value="";
 }
 </script>
 
