@@ -55,6 +55,7 @@ table {
 <th>Materia</th>
 <th>Edad</th>
 <th>Direccion</th>
+<th>Telefono</th>
 <th>Promedio</th>
 </tr>
 </thead>
@@ -73,8 +74,8 @@ table {
 <label for="nombre">Nombre</label>
 <input type="text" id="nombre">
 <br><br>
-<label for="apellido">Apellidos</label>
-<input type="text" id="apellido">
+<label for="apel">Apellidos</label>
+<input type="text" id="apel">
 <br><br>
 <label for="mat">Materia</label>
 <select name="mat" id="mat">
@@ -86,6 +87,9 @@ table {
 <br>
 <label for="dir">Direccion</label>
 <input type="text" id="dir">
+<br><br>
+<label for="tel">Telefono</label>
+<input type="text" id="tel">
 <br><br>
 <button id="sal" onclick="hola();">Actualizar</button>
 <!--</form>-->
@@ -100,30 +104,30 @@ table {
 var idno = 1;
 function hola () {
 var x = document.getElementById("nombre").value;
-var a = document.getElementById("apellido").value;
+var a = document.getElementById("apel").value;
 var y = document.getElementById("mat").value;
 var z = document.getElementById("dir").value;
-if (x == "" || z=="" || a=="") {
-    alert("All the boxes must be filled out");
-    
+var t = document.getElementById("tel").value;
+if (x == "" || z =="" || a == "" || t == "" || isNaN(t)) {
+    alert("All the boxes must be filled out"); 
   }
   else{
   var res=29-18;
   var ra= Math.floor(Math.random()*res);
   var ran=ra+18;
   var pro= Math.floor(Math.random()*100);
-  var json={"name":x,"lname":a, "mat":y, "dir":z};
+  var json = {"nombre":x,"apel":a,"mat":y, "edad":ran,"dir":z,"tele":t};
    alert("The database has been Updated");
    markup = "<tr><td>"+idno+"</td><td>"
-          + json.name + "</td><td>"+json.lname+"</td><td>"+json.mat+"</td><td>"+ran+
-          "</td><td>"+json.dir+"</td><td>"+pro+"</td></tr>";
+          + json.nombre + "</td><td>"+json.apel +"</td><td>"+json.mat+"</td><td>"+json.edad+"</td><td>"+json.dir+"</td><td>"+json.tele+"</td><td>"+pro+"</td></tr>";
         tableBody = $("table tbody");
         tableBody.append(markup);
         idno++;
    }
    document.getElementById("nombre").value="";
-   document.getElementById("apellido").value="";
    document.getElementById("dir").value="";
+   document.getElementById("apel").value="";
+   document.getElementById("tel").value="";
 }
 </script>
 
